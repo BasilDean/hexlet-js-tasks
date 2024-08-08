@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSON stringify</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="h-100 tab-content overflow-hidden">
+            <div role="tabpanel" id="react-aria2974480160-:r0:-tabpane-readme1"
+                 aria-labelledby="react-aria2974480160-:r0:-tab-readme1" class="fade tab-pane h-100 active show">
+                <div class="p-2 hexlet-ide-readme overflow-auto w-100 mh-100"><p>JavaScript содержит метод <code>JSON.stringify()</code>
+                    для приведения к строке любого значения. Он работает следующим образом:</p>
+                    <pre class="shiki shiki-themes github-light github-dark"
+                         style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8"
+                         tabindex="0"><code class="language-javascript"><span class="line"><span
+                            style="color:#005CC5;--shiki-dark:#79B8FF">JSON</span><span
+                            style="color:#24292E;--shiki-dark:#E1E4E8">.</span><span style="color:#6F42C1;--shiki-dark:#B392F0">stringify</span><span
+                            style="color:#24292E;--shiki-dark:#E1E4E8">(</span><span style="color:#032F62;--shiki-dark:#9ECBFF">'hello'</span><span
+                            style="color:#24292E;--shiki-dark:#E1E4E8">); </span><span
+                            style="color:#6A737D;--shiki-dark:#6A737D">// "hello" - для строковых значений добавляются кавычки</span></span>
+<span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">JSON</span><span
+        style="color:#24292E;--shiki-dark:#E1E4E8">.</span><span
+        style="color:#6F42C1;--shiki-dark:#B392F0">stringify</span><span
+        style="color:#24292E;--shiki-dark:#E1E4E8">(</span><span
+        style="color:#005CC5;--shiki-dark:#79B8FF">true</span><span
+        style="color:#24292E;--shiki-dark:#E1E4E8">);    </span><span style="color:#6A737D;--shiki-dark:#6A737D">// true    - значение приведено к строке, но без кавычек</span></span>
+<span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">JSON</span><span
+        style="color:#24292E;--shiki-dark:#E1E4E8">.</span><span
+        style="color:#6F42C1;--shiki-dark:#B392F0">stringify</span><span
+        style="color:#24292E;--shiki-dark:#E1E4E8">(</span><span
+        style="color:#005CC5;--shiki-dark:#79B8FF">5</span><span
+        style="color:#24292E;--shiki-dark:#E1E4E8">);       </span><span
+        style="color:#6A737D;--shiki-dark:#6A737D">// 5</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">const</span><span
+        style="color:#005CC5;--shiki-dark:#79B8FF"> data</span><span
+        style="color:#D73A49;--shiki-dark:#F97583"> =</span><span
+        style="color:#24292E;--shiki-dark:#E1E4E8"> { hello: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">'world'</span><span
+        style="color:#24292E;--shiki-dark:#E1E4E8">, is: </span><span
+        style="color:#005CC5;--shiki-dark:#79B8FF">true</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, nested: { count: </span><span
+        style="color:#005CC5;--shiki-dark:#79B8FF">5</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> } };</span></span>
+<span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">JSON</span><span
+        style="color:#24292E;--shiki-dark:#E1E4E8">.</span><span
+        style="color:#6F42C1;--shiki-dark:#B392F0">stringify</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(data); </span><span
+        style="color:#6A737D;--shiki-dark:#6A737D">// {"hello":"world","is":true,"nested":{"count":5}} </span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#005CC5;--shiki-dark:#79B8FF">JSON</span><span
+        style="color:#24292E;--shiki-dark:#E1E4E8">.</span><span
+        style="color:#6F42C1;--shiki-dark:#B392F0">stringify</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(data, </span><span
+        style="color:#005CC5;--shiki-dark:#79B8FF">null</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, </span><span
+        style="color:#005CC5;--shiki-dark:#79B8FF">2</span><span
+        style="color:#24292E;--shiki-dark:#E1E4E8">); </span><span style="color:#6A737D;--shiki-dark:#6A737D">// null, 2 - указывают на два пробела перед ключом</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">// ключам добавляются кавычки</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">// в конце каждой строчки (линии) добавляется запятая, если имеется значение ниже</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">// {</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">//   "hello": "world",</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">//   "is": true,</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">//   "nested": {</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">//     "count": 5</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">//   }</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">// }</span></span></code></pre>
+                    <h2>stringify.js</h2>
+                    <p>Реализуйте и экспортируйте по умолчанию функцию, похожую на <code>JSON.stringify()</code>, но со
+                        следующими отличиями:</p>
+                    <ul>
+                        <li>ключи и строковые значения должны быть без кавычек</li>
+                        <li>каждая строка заканчивается самим значением, без запятой</li>
+                    </ul>
+                    <p>Не используйте в своём решении саму функцию <code>JSON.stringify()</code>.</p>
+                    <p><strong>Синтаксис:</strong></p>
+                    <pre class="shiki shiki-themes github-light github-dark"
+                         style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8"
+                         tabindex="0"><code class="language-text"><span class="line"><span>stringify(value[, replacer[, spacesCount]])</span></span></code></pre>
+                    <p><strong>Параметры:</strong></p>
+                    <ul>
+                        <li><strong>value</strong>
+                            <ul>
+                                <li>Значение, преобразуемое в строку.</li>
+                            </ul>
+                        </li>
+                        <li><strong>replacer</strong>, необязательный
+                            <ul>
+                                <li>Строка - отступ для ключа; Значение по умолчанию - один пробел.</li>
+                            </ul>
+                        </li>
+                        <li><strong>spacesCount</strong>, необязательный
+                            <ul>
+                                <li>Число - количество повторов отступа ключа. Значение по умолчанию - 1.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <pre class="shiki shiki-themes github-light github-dark"
+                         style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8"
+                         tabindex="0"><code class="language-javascript"><span class="line"><span
+                            style="color:#D73A49;--shiki-dark:#F97583">import</span><span
+                            style="color:#24292E;--shiki-dark:#E1E4E8"> stringify </span><span
+                            style="color:#D73A49;--shiki-dark:#F97583">from</span><span
+                            style="color:#032F62;--shiki-dark:#9ECBFF"> './stringify.js'</span><span
+                            style="color:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">stringify</span><span
+        style="color:#24292E;--shiki-dark:#E1E4E8">(</span><span
+        style="color:#032F62;--shiki-dark:#9ECBFF">'hello'</span><span
+        style="color:#24292E;--shiki-dark:#E1E4E8">); </span><span style="color:#6A737D;--shiki-dark:#6A737D">// hello - значение приведено к строке, но не имеет кавычек</span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">stringify</span><span
+        style="color:#24292E;--shiki-dark:#E1E4E8">(</span><span
+        style="color:#005CC5;--shiki-dark:#79B8FF">true</span><span
+        style="color:#24292E;--shiki-dark:#E1E4E8">);    </span><span
+        style="color:#6A737D;--shiki-dark:#6A737D">// true</span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">stringify</span><span
+        style="color:#24292E;--shiki-dark:#E1E4E8">(</span><span
+        style="color:#005CC5;--shiki-dark:#79B8FF">5</span><span
+        style="color:#24292E;--shiki-dark:#E1E4E8">);       </span><span
+        style="color:#6A737D;--shiki-dark:#6A737D">// 5</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">const</span><span
+        style="color:#005CC5;--shiki-dark:#79B8FF"> data</span><span
+        style="color:#D73A49;--shiki-dark:#F97583"> =</span><span
+        style="color:#24292E;--shiki-dark:#E1E4E8"> { hello: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">'world'</span><span
+        style="color:#24292E;--shiki-dark:#E1E4E8">, is: </span><span
+        style="color:#005CC5;--shiki-dark:#79B8FF">true</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, nested: { count: </span><span
+        style="color:#005CC5;--shiki-dark:#79B8FF">5</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> } };</span></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">stringify</span><span
+        style="color:#24292E;--shiki-dark:#E1E4E8">(data); </span><span style="color:#6A737D;--shiki-dark:#6A737D">// то же самое что stringify(data, ' ', 1);</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">// {</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">//  hello: world</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">//  is: true</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">//  nested: {</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">//   count: 5</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">//  }</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">// }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">stringify</span><span
+        style="color:#24292E;--shiki-dark:#E1E4E8">(data, </span><span
+        style="color:#032F62;--shiki-dark:#9ECBFF">'|-'</span><span style="color:#24292E;--shiki-dark:#E1E4E8">, </span><span
+        style="color:#005CC5;--shiki-dark:#79B8FF">2</span><span
+        style="color:#24292E;--shiki-dark:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">// Символ, переданный вторым аргументом повторяется столько раз, сколько указано третьим аргументом.</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">// {</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">// |-|-hello: world</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">// |-|-is: true</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">// |-|-nested: {</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">// |-|-|-|-count: 5</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">// |-|-}</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">// }</span></span></code></pre>
+                    <h3>Подсказки</h3>
+                    <ul>
+                        <li>чтобы лучше понять как работает <code>JSON.stringify()</code>, запускайте его с разными данными и
+                            параметрами в консоли браузера.
+                        </li>
+                        <li>проверки в тестах идут от простого к сложному:
+                            <ul>
+                                <li>проверка на примитивных типах;</li>
+                                <li>проверка на "плоских" данных;</li>
+                                <li>проверка на "вложенных" данных.</li>
+                            </ul>
+                        </li>
+                        <li>вы можете импортировать <code>lodash</code> и использовать в решении. Он подключен в упражнениии, но
+                            решить задачу можно и без него, поэтому не импортирован
+                        </li>
+                        <li>реализуйте функцию так же пошагово, проверяя, что изменения для сложных кейсов не сломали более
+                            простые;
+                        </li>
+                        <li>используйте метод <a
+                                href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/repeat"
+                                target="_blank">repeat()</a>;
+                        </li>
+                        <li><a href="https://ru.hexlet.io/qna/glossary/questions/chto-takoe-json" target="_blank">Что такое
+                            JSON</a></li>
+                        <li>документация по JSON.stringify <a
+                                href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify"
+                                target="_blank">на MDN</a>.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!--TODO make visual interface for input output-->
+</body>
+<script src="./index.js"></script>
+</html>
