@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Itinerary</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="wrapper">
+    <div class="p-3 card mt-3">
+        <div class="card-body p-0 p-md-3">
+            <div class="hexlet-markdown-body">
+                <h2 id="itinerary-js">itinerary.js</h2>
+                <p>Реализуйте и экспортируйте по умолчанию функцию, которая выстраивает маршрут между городами.</p>
+                <p>Функция принимает 3 аргумента: </p>
+                <ul>
+                    <li>дерево городов</li>
+                    <li>город старта</li>
+                    <li>город окончания маршрута</li>
+                </ul>
+                <p>и возвращает массив городов, выстроенный в том же порядке, в котором они находятся на пути следования
+                    по маршруту.</p>
+                <h3 id="primery">Примеры</h3>
+                <pre class="hljs"><code class="javascript"><span
+                        style="color: #66d9ef;font-weight: bold">const</span> <span
+                        style="color: #f8f8f2">tree</span> <span style="color: #f92672;font-weight: bold">=</span> <span
+                        style="color: #f8f8f2">[</span><span style="color: #e6db74">'</span><span
+                        style="color: #e6db74">Moscow</span><span style="color: #e6db74">'</span><span
+                        style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">[</span>
+  <span style="color: #f8f8f2">[</span><span style="color: #e6db74">'</span><span style="color: #e6db74">Smolensk</span><span
+                            style="color: #e6db74">'</span><span style="color: #f8f8f2">],</span>
+  <span style="color: #f8f8f2">[</span><span style="color: #e6db74">'</span><span
+                            style="color: #e6db74">Yaroslavl</span><span style="color: #e6db74">'</span><span
+                            style="color: #f8f8f2">],</span>
+  <span style="color: #f8f8f2">[</span><span style="color: #e6db74">'</span><span style="color: #e6db74">Voronezh</span><span
+                            style="color: #e6db74">'</span><span style="color: #f8f8f2">,</span> <span
+                            style="color: #f8f8f2">[</span>
+    <span style="color: #f8f8f2">[</span><span style="color: #e6db74">'</span><span
+                            style="color: #e6db74">Liski</span><span style="color: #e6db74">'</span><span
+                            style="color: #f8f8f2">],</span>
+    <span style="color: #f8f8f2">[</span><span style="color: #e6db74">'</span><span
+                            style="color: #e6db74">Boguchar</span><span style="color: #e6db74">'</span><span
+                            style="color: #f8f8f2">],</span>
+    <span style="color: #f8f8f2">[</span><span style="color: #e6db74">'</span><span
+                            style="color: #e6db74">Kursk</span><span style="color: #e6db74">'</span><span
+                            style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">[</span>
+      <span style="color: #f8f8f2">[</span><span style="color: #e6db74">'</span><span
+                            style="color: #e6db74">Belgorod</span><span style="color: #e6db74">'</span><span
+                            style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">[</span>
+        <span style="color: #f8f8f2">[</span><span style="color: #e6db74">'</span><span
+                            style="color: #e6db74">Borisovka</span><span style="color: #e6db74">'</span><span
+                            style="color: #f8f8f2">],</span>
+      <span style="color: #f8f8f2">]],</span>
+      <span style="color: #f8f8f2">[</span><span style="color: #e6db74">'</span><span
+                            style="color: #e6db74">Kurchatov</span><span style="color: #e6db74">'</span><span
+                            style="color: #f8f8f2">],</span>
+    <span style="color: #f8f8f2">]],</span>
+  <span style="color: #f8f8f2">]],</span>
+  <span style="color: #f8f8f2">[</span><span style="color: #e6db74">'</span><span
+                            style="color: #e6db74">Ivanovo</span><span style="color: #e6db74">'</span><span
+                            style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">[</span>
+    <span style="color: #f8f8f2">[</span><span style="color: #e6db74">'</span><span
+                            style="color: #e6db74">Kostroma</span><span style="color: #e6db74">'</span><span
+                            style="color: #f8f8f2">],</span> <span style="color: #f8f8f2">[</span><span
+                            style="color: #e6db74">'</span><span style="color: #e6db74">Kineshma</span><span
+                            style="color: #e6db74">'</span><span style="color: #f8f8f2">],</span>
+  <span style="color: #f8f8f2">]],</span>
+  <span style="color: #f8f8f2">[</span><span style="color: #e6db74">'</span><span style="color: #e6db74">Vladimir</span><span
+                            style="color: #e6db74">'</span><span style="color: #f8f8f2">],</span>
+  <span style="color: #f8f8f2">[</span><span style="color: #e6db74">'</span><span
+                            style="color: #e6db74">Tver</span><span style="color: #e6db74">'</span><span
+                            style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">[</span>
+    <span style="color: #f8f8f2">[</span><span style="color: #e6db74">'</span><span
+                            style="color: #e6db74">Klin</span><span style="color: #e6db74">'</span><span
+                            style="color: #f8f8f2">],</span> <span style="color: #f8f8f2">[</span><span
+                            style="color: #e6db74">'</span><span style="color: #e6db74">Dubna</span><span
+                            style="color: #e6db74">'</span><span style="color: #f8f8f2">],</span> <span
+                            style="color: #f8f8f2">[</span><span style="color: #e6db74">'</span><span
+                            style="color: #e6db74">Rzhev</span><span style="color: #e6db74">'</span><span
+                            style="color: #f8f8f2">],</span>
+  <span style="color: #f8f8f2">]],</span>
+<span style="color: #f8f8f2">]];</span>
+
+<span style="color: #f8f8f2">itinerary</span><span style="color: #f8f8f2">(</span><span
+                            style="color: #f8f8f2">tree</span><span style="color: #f8f8f2">,</span> <span
+                            style="color: #e6db74">'</span><span style="color: #e6db74">Dubna</span><span
+                            style="color: #e6db74">'</span><span style="color: #f8f8f2">,</span> <span
+                            style="color: #e6db74">'</span><span style="color: #e6db74">Kostroma</span><span
+                            style="color: #e6db74">'</span><span style="color: #f8f8f2">);</span>
+<span style="color: #75715e;font-style: italic">// ['Dubna', 'Tver', 'Moscow', 'Ivanovo', 'Kostroma']</span>
+
+<span style="color: #f8f8f2">itinerary</span><span style="color: #f8f8f2">(</span><span
+                            style="color: #f8f8f2">tree</span><span style="color: #f8f8f2">,</span> <span
+                            style="color: #e6db74">'</span><span style="color: #e6db74">Borisovka</span><span
+                            style="color: #e6db74">'</span><span style="color: #f8f8f2">,</span> <span
+                            style="color: #e6db74">'</span><span style="color: #e6db74">Kurchatov</span><span
+                            style="color: #e6db74">'</span><span style="color: #f8f8f2">);</span>
+<span style="color: #75715e;font-style: italic">// ['Borisovka', 'Belgorod', 'Kursk', 'Kurchatov']</span>
+</code></pre>
+                <h3 id="podskazki">Подсказки</h3>
+                <ul>
+                    <li>Используйте функции из библиотеки <a href="https://lodash.com/docs/" target="_blank">lodash</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--TODO make visual interface for input output-->
+</body>
+<script src="/lodash.js"></script>
+<script src="./index.js"></script>
+</html>
